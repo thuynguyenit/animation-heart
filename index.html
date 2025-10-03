@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For Kim Ly ❤️</title>
+  <title>Kim Ly dễ thương</title>
   <style>
     body {
       margin: 0;
@@ -11,87 +10,105 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: radial-gradient(circle at top, #1b0034, #000000);
+      flex-direction: column;
+      background: linear-gradient(135deg, #ffe6f2, #fff0f5, #ffe4e1);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
       overflow: hidden;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
     }
 
-    .stars {
+    /* Nền lấp lánh */
+    body::before {
+      content: "";
       position: absolute;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        radial-gradient(2px 2px at 20px 30px, #fff, transparent),
-        radial-gradient(2px 2px at 40px 70px, #fff, transparent),
-        radial-gradient(2px 2px at 50px 160px, #fff, transparent),
-        radial-gradient(2px 2px at 90px 40px, #fff, transparent),
-        radial-gradient(2px 2px at 130px 80px, #fff, transparent);
-      animation: twinkle 10s infinite linear;
-      z-index: 0;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://i.imgur.com/wQfVuIh.png'); /* ảnh lấp lánh */
+      background-size: cover;
+      opacity: 0.4;
+      pointer-events: none;
+      animation: sparkle 6s linear infinite;
     }
 
-    @keyframes twinkle {
-      from { transform: translateY(0px); }
-      to { transform: translateY(-100px); }
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes sparkle {
+      from { background-position: 0 0; }
+      to { background-position: 100% 100%; }
     }
 
     .heart {
+      width: 120px;
+      height: 120px;
+      background-color: pink;
       position: relative;
-      width: 120px;
-      height: 120px;
       transform: rotate(-45deg);
-      background: #ff2d55;
-      animation: beat 1s infinite;
-      z-index: 1;
+      animation: heartbeat 1.5s infinite;
     }
 
-    .heart:before,
-    .heart:after {
+    .heart::before,
+    .heart::after {
       content: "";
-      position: absolute;
       width: 120px;
       height: 120px;
-      background: #ff2d55;
+      background-color: pink;
       border-radius: 50%;
+      position: absolute;
     }
 
-    .heart:before {
+    .heart::before {
       top: -60px;
       left: 0;
     }
 
-    .heart:after {
+    .heart::after {
       left: 60px;
       top: 0;
     }
 
-    @keyframes beat {
+    @keyframes heartbeat {
       0%, 100% { transform: scale(1) rotate(-45deg); }
-      25% { transform: scale(1.1) rotate(-45deg); }
       50% { transform: scale(1.2) rotate(-45deg); }
-      75% { transform: scale(1.1) rotate(-45deg); }
     }
 
-    .message {
+    h1 {
+      margin-top: 20px;
+      color: #ff3399;
+      font-size: 36px;
+      text-shadow: 0 0 10px #fff, 0 0 20px #ff99cc;
+    }
+
+    /* Trang trí bánh trung thu & lồng đèn */
+    .decor {
       position: absolute;
-      top: 75%;
-      text-align: center;
-      font-size: 28px;
-      font-weight: bold;
-      color: #ff9cdc;
-      text-shadow: 0 0 10px #ff4da6, 0 0 20px #ff4da6;
-      animation: glow 2s ease-in-out infinite alternate;
+      font-size: 40px;
+      animation: float 5s ease-in-out infinite;
     }
 
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #ff4da6, 0 0 20px #ff4da6; }
-      to { text-shadow: 0 0 20px #ff80c0, 0 0 40px #ff80c0; }
+    .lantern1 { top: 10%; left: 15%; }
+    .lantern2 { top: 20%; right: 15%; }
+    .cake1 { bottom: 15%; left: 20%; }
+    .cake2 { bottom: 20%; right: 20%; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
     }
   </style>
 </head>
 <body>
-  <div class="stars"></div>
   <div class="heart"></div>
-  <div class="message">I love you, Kim Ly ❤️</div>
+  <h1>Kim Ly</h1>
+
+  <!-- Trang trí -->
+  <div class="decor lantern1">🏮</div>
+  <div class="decor lantern2">🏮</div>
+  <div class="decor cake1">🥮</div>
+  <div class="decor cake2">🥮</div>
 </body>
 </html>
